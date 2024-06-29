@@ -1,0 +1,11 @@
+{
+    "webpage_title": "网页标题",
+    "payload": {
+        "username": "你的用户名",
+        "password": "你的密码"
+    },
+    "target_id": 114514,
+    "target_name": "对象的用户名",
+    "page_number": 1919810,
+    "avatar_path": "https://avatar.saraba1st.com/000/55/19/26_avatar_middle.jpg"
+}
