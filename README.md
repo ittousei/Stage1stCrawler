@@ -58,4 +58,4 @@
 python demo.py
 ```
 
-输出结果保存在项目根目录下的f"{target_id}.html"中，这是输出文件的一个[示例](/555493.html)。
+输出结果保存在项目目录下的f"{target_id}.html"中，这是输出文件的一个[示例](https://html-preview.github.io/?url=https://github.com/ittousei/Stage1stCrawler/blob/main/555493.html)。
