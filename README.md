@@ -8,7 +8,7 @@
 
 - 以往的爬虫程序大多针对论坛的专楼进行爬取，而要检索特定用户的发言较为困难。
 - 某个用户很有人格魅力，想要把他的发言下载到本地反复品鉴。
-- 部分论坛谜语人喜欢编辑历史发言，用爬虫的快照机制让谜语人无所遁形。
+- 部分论坛谜语人喜欢编辑发言，用爬虫的快照机制让谜语人无所遁形。
 
 程序的不足：
 
@@ -39,14 +39,18 @@
 }
 ```
 
-比较重要的几个参数是`username`、`password`，`target_id`和`page_number`：
+几个比较重要的参数是`username`、`password`，`target_id`和`page_number`：
 
 - `username`和`password`是你的用户名和密码，用于登录论坛。
-- `target_id`是你所要爬取用户的uid，可以在对方的主页中看到，如[https://bbs.saraba1st.com/2b/space-uid-114514.html](https://bbs.saraba1st.com/2b/space-uid-114514.html)。
-- `page_number`是对方回帖的总页数。获取方法是点开主页的回帖，点击"下一页"，此时主页地址会变成这种格式：[https://bbs.saraba1st.com/2b/home.php?mod=space&uid=114514&do=thread&view=me&type=reply&order=dateline&from=space&page=2](https://bbs.saraba1st.com/2b/home.php?mod=space&uid=114514&do=thread&view=me&type=reply&order=dateline&from=space&page=2)。不断修改地址中`page`参数，直到翻到对方发言的最后一页。
+- `target_id`是你所要爬取用户的UID，可以在用户主页中看到，如[https://bbs.saraba1st.com/2b/space-uid-114514.html](https://bbs.saraba1st.com/2b/space-uid-114514.html)，`114514`便是该用户的UID。
+- `page_number`是用户回帖的总页数。获取方法是访问目标用户的主页，进入"回帖数"页面，自行统计回帖的页数。
 - `page_number`填的不对可能会导致发言记录少爬取或者程序报错。
 
-其他几个参数仅用于设置输出文件的外观，对爬虫的结果没有影响，根据需求填写。
+其他参数仅用于调整输出文件的外观，对爬虫的结果没有影响，根据需求填写：
+
+- `webpage_title`是输出文件的HTML head title。
+- `target_name`是你所要爬取用户的昵称。
+- `avatar_path`是用户头像的图床链接。
 
 2. 执行demo.py
 
@@ -54,4 +58,4 @@
 python demo.py
 ```
 
-输出结果保存在当前目录的文件"{target_id}.html"中，这是输出文件的一个[示例](/555493.html)。
+输出结果保存在项目根目录下的f"{target_id}.html"中，这是输出文件的一个[示例](/555493.html)。
